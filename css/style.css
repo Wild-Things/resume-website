@@ -1,0 +1,735 @@
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, fieldset, label,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*  Declaration of global variables for use throughout the 
+    stylesheet this includes nesting variables into other 
+    variables */
+
+:root {
+    --nav-footer-bckg: #36393B;
+    --text-colour-invert: black;
+    --invert-nav-footer-background: #C9C6C4;
+    --gradient-fill: #A1B0AB;
+    --bckg-colour: linear-gradient(var(--nav-footer-bckg), var(--invert-nav-footer-background));
+    --text-colour: #FCFAFA;
+    --website-box-height: 200px;
+    --website-box-width: 200px;
+    --header-height: 75px;
+    --project-height: 250px;
+}
+
+/*  Used for applying global text colours and font styles */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-colour);
+}
+
+/*  Header area contains the navigation bar  */
+
+header {
+    height: var(--header-height);
+    width: 100vw;
+}
+
+/*  Styling explicitly for the global nav container that
+    all pages use */
+
+#global_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav-footer-bckg);
+    height: inherit;
+    width: inherit;
+}
+
+/*  targets both nav section classes. There are more than
+    one nav_section areas, hence the use of classes */
+
+.nav_header, .nav_section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 33.33%;
+    height: inherit;
+
+    & > .nav_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        width: 50%;
+        transition: 0.2s ease;
+        border-left: black solid 4px;
+
+        &:hover {
+            background-color: rgb(241, 241, 241);
+            transition: 0.2s ease;
+
+            & > h2 {
+                transform: scale(115%);
+                transition: 0.2s ease;
+
+                & > a {
+                    text-decoration: underline;
+                    color: purple;
+                    transition: 0.2s ease;
+                }
+            }
+        }
+
+        & > h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: inherit;
+            width: 100%;
+            transition: 0.2s ease;
+
+            & > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #FCFAFA;
+            height: inherit;
+            width: inherit;
+            transition: 0.2s ease;
+            }
+        }
+    }
+}
+
+/*  This is the main content that exists between the 
+    footer and the nav */
+
+#content {
+    display: flex;
+    background-image: var(--bckg-colour);
+    min-height: 83vh;
+    justify-content: center;
+
+    & > .section {
+        width: 33.3%;
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+
+        & > .title_area {
+            display: flex;
+            justify-content: center;
+
+            & > h2 {
+                font-size: 200%;
+                margin-top: 2%;
+                margin-bottom: 2%;
+            }
+        }
+
+        & > .text_area > ul {
+            margin: 2% 0% 2% 5%;
+        }
+
+        & .text_area > * > .bold, 
+          .text_area > * > * > .bold {
+            font-weight: bold;
+        }
+    }
+
+    & > #column_left, 
+        #column_center,
+        #column_right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+
+        & > .image_container {
+            max-width: 300px;
+
+            & > img {
+                width: 100%;
+                min-width: 300px;
+                height: auto;
+                border-radius: 5px;
+                border: black solid 2px;
+            }
+        }
+    }
+
+    & > #column_center {
+        flex-direction: column;
+    }
+}
+
+/*  This is explicitly for the "fun websites" homepage 
+    section. I mostly wanted to fill whtie space */
+
+.website_box {
+    display: grid;
+    grid-template-areas: 
+    "img url"
+    "img description";
+    grid-template-rows: 1fr 2fr;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:hover {
+
+        & > .img {
+            opacity: 100%;
+            transition: 0.4s ease;
+        }
+    }
+
+    & > div.img {
+        grid-area: img;
+        padding: 5px;
+        border: black solid 2px;
+        border-radius: 5px 0px 0px 5px;
+        width: var(--website-box-height);
+        height: var(--website-box-width);
+        opacity: 25%;
+        transition: 0.4s ease;
+    }
+
+    & > div.url {
+        grid-area: url;
+        border: black solid 2px;
+        border-radius: 0px 5px 0px 0px;
+        height: calc(var(--website-box-height)/3);
+        
+
+        & > h3 {
+            height: 100%;
+            width: 100%;
+
+            & > a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: #FCFAFA;
+            transition: 0.2s ease;
+            }
+        }
+
+        &:hover {
+            background-color: rgb(241, 241, 241);
+            transition: 0.2s ease;
+
+            & > h3 > a {
+                text-decoration: underline;
+                color: purple;
+                transition: 0.2s ease;
+            }
+        }
+    }
+
+    & > div.description {
+        grid-area: description;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding: 5%;
+        border: black solid 2px;
+        border-radius: 0px 0px 5px 0px;
+    }
+}
+
+/*  this sets the background image for the first 
+    website on the homepage column_right */
+
+#muscle_wiki {
+    background-image: url(../images/musclewiki.png);
+}
+
+/*  This sets the background image for the second
+    website on the homepage column_right */
+
+#plan_your_room {
+    background-image: url(../images/planyourroom.png);
+}
+
+/*  Slideshow box */
+
+#slideshow_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    margin: auto;
+    margin-top: 50px;
+
+    & > .prev, .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.8);
+            cursor: pointer;
+        }
+    }
+
+    & > .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+}
+
+/*  Container for each project */
+
+.project_container {
+    display: none;
+
+    & > .slide_number {
+        font-size: 50px;
+        position: absolute;
+        top: 0;
+    }
+
+    /*  Title portion of the project container*/
+
+    & > .project_title {
+        display: flex;
+        justify-content: center;
+        height: calc(var(--project-height)/5);
+        padding: 1%;
+    
+        & > h2 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /*  images in the project container */
+
+    & > .project_img{ 
+        height: var(--project-height);
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        & > img{
+            height: 100%;
+            width: auto;
+            border-radius: 5px;
+        }
+    }
+
+    /*  The description portions of the project
+    container */
+
+    & > .project_description {
+        position: absolute;
+        height: var(--project-height);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px;
+
+        & > p {
+            margin-bottom: 10px;
+        }
+
+        & > .project_link {
+            display: flex;
+            height: 25%;
+            justify-content: center;
+            align-items: center;
+        
+            & > a {
+                color: var(--text-colour-invert);
+                transition: 0.2s ease;
+
+                &:hover {
+                        color: rgb(186, 65, 241);
+                        transition: 0.2s ease;
+                }
+            }
+        }
+    }
+}
+
+/*  Fade effect for the project containers */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/*  for anything assigned to the .active class
+    by the javascript functions */
+
+.active {
+    background-color: #717171;
+}
+
+/*  Like how keyframes work in video editing,
+    uses the transition time to key in the
+    effect starting from 40% opacity to
+    100% opacity for the fade transition */
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.resume_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 1%;
+
+    & > .resume_section {
+        text-align: center;
+        margin: 2%;
+
+        & > h2 {
+            margin-bottom: 1%;
+        }
+
+        & > h3, p {
+            text-align: start;
+        }
+
+        & > ul {
+            margin-bottom: 2%;
+
+            & > li{
+                text-align: left;
+                margin: 2px;
+
+                & > a {
+                    color: var(--text-colour);
+
+                    &:hover {
+                        color: rgb(158, 2, 158);
+                    }
+                }
+            }
+        }
+    }
+
+    & > #contact_resume {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > h2 {
+            text-align: center;
+            width: 50%;
+            height: 100%;
+        }
+
+        & > ul {
+            width: 50%;
+
+            & > li {
+                list-style: none;
+                text-align: center;
+            }
+        }
+    }
+
+    & > #summary {
+        display: flex;
+        flex-direction: column;
+
+        & > h2 {
+            text-align: center;
+        }
+    }
+
+    & > #skills, #education {
+        color:#36393B;
+    }
+}
+
+/*  Container for the form on the contact page */
+
+.form_area {
+    width: 100%;
+    height: 100%;
+
+    & > form {
+        width: inherit;
+        height: inherit;
+
+        & > .contact_container {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+
+/*  This is the container that holds the contact fields
+    to be filled out by the user */
+
+.contact_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    & > fieldset {
+        display: flex;
+        width: inherit;
+    }
+}
+
+/*  This styles the table on the contacts page */
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: inherit;
+    color: #36393B;
+
+    & > tbody {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        border: solid black 2px;
+        border-radius: 5px;
+        background-color: var(--invert-nav-footer-background);
+
+        & > tr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            & > td {
+                display: flex;
+                justify-content:flex-end;
+                align-items: flex-start;
+                margin: 5px;
+                height: 100%;
+                width: 50%;
+            }
+
+            & > #contact_message_title {
+                height: 200px;
+            }
+
+            & > #contact_name, 
+                #contact_email, 
+                #contact_message, 
+                #submit_button {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                & > #c_message {
+                    height: 200px;
+                    width: 100%;
+                }
+
+                & > #c_name, 
+                    #c_email {
+                    width: 100%;
+                }
+            }
+        }   
+    }
+}
+
+/*  This contains everything for the footer style */
+
+.footer_container {
+    display: grid;
+    grid-template-areas:
+        "header email phone" 
+        "header linkedin github";
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--nav-footer-bckg);
+    width: 100%;
+    gap: 5px;
+    padding: 5px;
+    border-top: solid black 2px;
+
+    & > div.header {
+        grid-area: header;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    & > div.email {
+        grid-area: email;
+    }
+
+    & > div.phone {
+        grid-area: phone;
+    }
+
+    & > div.linkedin {
+        grid-area: linkedin;
+    }
+
+    & > div.github {
+        grid-area: github;
+    }
+
+    & > div.github > h3, div.linkedin > h3 {
+        transition: 0.2s ease;
+
+        &:hover {
+            transform: scale(115%);
+            transition: 0.2s ease;
+        }
+
+        
+    }
+
+    & > div.github > h3 > a, div.linkedin > h3 > a {
+        text-decoration: none;
+        color: white;
+        transition: 0.2s ease;
+
+        & > img {
+            height: 15px;
+            width: auto;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            color: rgb(146, 0, 214);
+            text-decoration: underline;
+            transition: 0.2s ease;
+        }
+
+    }
+
+    & > div.email, div.phone, div.linkedin, div.github {
+        margin: 5px;
+        text-align: center;
+    }
+}
+
+/*  This media query reorganizes the page when it
+    is below 1440px */
+
+@media screen and (max-width: 1440px) {
+    #content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > .section {
+            width: 75%;
+            height: 100%;
+        }
+    }
+
+    .nav_link > h2 {
+        font-size: 125%;
+    }
+    
+    .resume_container {
+
+        & > #contact_resume {
+            display: flex;
+            flex-direction: column;
+
+            & > ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+/*  This media query reorganizes the footer to
+    be vertical below 600px and adjusts the 
+    slideshow numbers/arrows */
+
+@media screen and (max-width: 600px) {
+    .website_box {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: none;
+        }
+
+    .nav_link > h2 {
+        font-size: 100%;
+    }
+
+    .footer_container{
+        grid-template-areas:
+        "header"
+        "email"
+        "phone"
+        "linkedin"
+        "github";
+        grid-template-columns: 1fr;
+
+        & > div.header {
+            justify-content: center;
+        }
+    }
+
+    #slideshow_container {
+        & > .prev, .next {
+            font-size: 18px;
+        }
+
+        & > .project_container > .slide_number {
+            font-size: 30px;
+        }
+    }
+
+    .resume_container {
+
+        & > #contact_resume {
+            display: flex;
+            flex-direction: column;
+
+            & > ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+}
