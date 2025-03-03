@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="A webpage with my contact information">
+    <meta name="Keywords" content="contact, information">
+    <meta name="Author" content="Mike Sharpe">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>Contact</title>
+</head>
+
+<body>
+
+    <!-- Navigation area -->
+
+    <header>
+        <nav id="global_nav">
+
+            <!-- First nav Section -->
+
+            <div class="nav_section">
+
+                    <!-- First section header -->
+
+                <h2>Contact form</h2>
+            </div>
+
+            <!-- Second nav section -->
+
+            <div class="nav_section">
+
+                <!-- Div for dividing the section -->
+
+                <div class="nav_link">
+
+                    <!-- Heading for the text and a nested link -->
+
+                    <h2><a href="./index.html">Home</a></h2>
+                </div>
+
+                <!-- Div for dividing the section -->
+
+                <div class="nav_link">
+
+                    <!-- Heading for the text and a nested link -->
+
+                    <h2><a href="./projects.html">Projects</a></h2>
+                </div>
+            </div>
+
+            <!-- Third nav section -->
+
+            <div class="nav_section">
+
+                <!-- Div for dividing the section -->
+
+                <div class="nav_link">
+
+                    <!-- Heading for the text and a nested link -->
+                    
+                    <h2><a href="./resume.html">Resume</a></h2>
+                </div>
+                <div class="nav_link">
+
+                    <!-- Heading for the text and a nested link -->
+
+                    <h2><a href="./contact.html">Contact</a></h2>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main area below the nav bar -->
+
+    <main id="content">
+
+        <!-- Left section of the content area -->
+
+        <div class="section" id="column_left">
+            
+        </div>
+
+        <!-- Middle section of the content area -->
+
+        <div class="section" id="column_center">
+
+            <!-- Contaienr for the form -->
+
+            <div class="form_area">
+
+                <!-- Actual form to send information from the inputs -->
+
+                <form method="post" action="javascript:void(0)">
+
+                    <!-- Container for the input fields -->
+
+                    <div class="contact_container">
+
+                        <!-- Fieldset to contain the inputs -->
+
+                        <fieldset>
+
+                            <!-- Table for structuring the inputs and labels -->
+
+                            <table>
+
+                                <!-- Tbody element for the purpose of potential styling -->
+
+                                <tbody>
+
+                                    <!-- Table row 1 -->
+
+                                    <tr>
+
+                                        <!-- Table column 1-1 -->
+
+                                        <td>
+
+                                            <!-- h3 heading for the label -->
+
+                                            <h3>
+
+                                                <!-- Label for the c_name input -->
+
+                                                <label for="c_name">Name: </label>
+                                            </h3>
+                                        </td>
+
+                                        <!-- Table column 1-2 -->
+
+                                        <td id="contact_name">
+
+                                            <!-- Text input for the name -->
+
+                                            <input type="text" id="c_name" name="Name">
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table row 2 -->
+
+                                    <tr>
+
+                                        <!-- Table column 2-1 -->
+
+                                        <td>
+
+                                            <!-- h3 heading for the label -->
+
+                                            <h3>
+
+                                                <!-- Label for the c_email input -->
+
+                                                <label for="c_email">Email: </label>
+                                            </h3>
+                                        </td>
+
+                                        <!-- Table column 2-2 -->
+
+                                        <td id="contact_email">
+
+                                            <!-- Email input type -->
+
+                                            <input type="email" id="c_email" name="email">
+                                        </td>
+                                    </tr>
+
+                                    <!-- Table row 3 -->
+
+                                    <tr>
+
+                                        <!-- Table column 3-1 -->
+
+                                        <td id="contact_message_title">
+
+                                            <!-- h3 heading for the label -->
+
+                                            <h3>
+
+                                                <!-- Label for the c_message input -->
+
+                                                <label for="c_message">Message: </label>
+                                            </h3>
+                                        </td>
+
+                                        <!-- Table column 3-2 -->
+
+                                        <td id="contact_message"><textarea id="c_message" name="message"></textarea></td>
+                                    </tr>
+
+                                    <!-- Table row 4 -->
+
+                                    <tr>
+
+                                        <!-- Table column 4-1 -->
+
+                                        <td></td>
+
+                                        <!-- Table column 4-2 -->
+
+                                        <td id="submit_button">
+
+                                            <!-- Button to submit the form -->
+
+                                            <button id="contact_submit" type="submit">Send</button>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                            </table>
+            
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right section of the content area -->
+
+        <div class="section" id="column_right">
+
+        </div>
+    </main>
+
+    <footer>
+
+        <!-- The containing area of the footer -->
+
+        <div class="footer_container">
+
+            <!-- The left portion of the grid in the footer -->
+
+            <div class="header"><h2>Contact:</h2></div>
+
+            <!-- the email in the center top of the footer grid -->
+
+            <div class="email"><h3>sharpeproduction@gmail.com</h3></div>
+
+            <!-- the phone number below the email in the footer grid -->
+
+            <div class="phone"><h3>613-6136136</h3></div>
+
+            <!-- A link to my linkedin profile in the top right of the footer grid -->
+
+            <div class="linkedin">
+
+                <!-- Header for the section -->
+
+                <h3>
+
+                    <!-- Link for the profile going to a blank tab -->
+
+                    <a target="_blank" id="linkedin" href="https://www.linkedin.com/in/mike-sharpe-501627305/">LinkedIn 
+
+                        <!-- Icon for linkedin -->
+
+                        <img src="./images/linkedin.png" alt="Linkedin icon">
+                    </a>
+                </h3>
+            </div>
+
+            <!-- A lnik to my Github profile in the bottom left of the footer grid -->
+
+            <div class="github">
+
+                <!-- Header for the section -->
+
+                <h3>
+
+                    <!-- Link for the profile going to a blank tab -->
+
+                    <a target="_blank" id="github" href="https://github.com/Wild-Things">Github 
+
+                        <!-- Icon for GitHub -->
+
+                        <img src="./images/github.png" alt="Github icon">
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
